@@ -9,7 +9,7 @@ angular.module('uiComponents', [])
                 options: '=',
                 ngModel: '='
             },
-            templateUrl : '../template/select.html',
+            templateUrl : '/select-component/template/select.html',
             link: function (scope, element) {
 
                 scope.selectedOptionIndex = null;
