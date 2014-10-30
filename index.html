@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="css/select.css">
+</head>
+<body>
+	<style type="text/css">
+	.container {
+		width: 200px;
+		margin: 8% auto;
+	}
+	.input {
+		margin-bottom: 20px;
+		width: 100%;
+		padding: 5px 10px;
+		-webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	}
+	</style>
+	<div ng-app="app">
+
+		<div class="container" ng-controller="SelectController">
+
+			<select-component ng-model="selectedOption" data-options="options" ></select-component>
+			
+			<!-- <div class="custom-select">
+	
+				<div class="label">
+					Select an option
+				</div>
+				<ul class="options">
+					<li>First</li>
+					<li>Second</li>
+					<li>Third</li>
+					<li>Fourth</li>
+					<li>Fifth</li>
+				</ul>
+			</div> -->
+
+		
+		</div><!-- ./container -->
+
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script type="text/javascript" src="js/select.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

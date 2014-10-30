@@ -1,0 +1,128 @@
+div.custom-select {
+	width: 200px;
+    position: relative;
+	font-size: 13px;
+	font-family: 'Arial', sans-serif;
+}
+div.custom-select.disable {
+    opacity: 0.6;
+}
+
+div.custom-select * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div.custom-select div.label {
+    position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 5px 25px 5px 10px;
+    color: #ccc;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+div.custom-select div.label:hover {
+    cursor: pointer;
+}
+
+div.custom-select div.label.open {
+    color: #58585a;
+    border-color: #afafaf;
+}
+
+/* ARROW */
+div.custom-select div.label::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 7px 6px 0 6px;
+    border-color: #cccccc transparent transparent transparent;
+    top: 10px;
+    right: 9px;
+}
+div.custom-select div.label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    border-color: #ffffff transparent transparent transparent;
+    top: 10px;
+    right: 11px;
+}
+
+div.custom-select div.label.open::before {
+    border-color: #58585a transparent transparent transparent;
+}
+
+/* LIST */
+div.custom-select ul.options {
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+    max-height: 200px;
+    overflow: auto;
+    background: rgba(255,255,255,.95);
+    border: 1px solid #afafaf;
+    min-width: 130px;
+}
+
+div.custom-select ul.options.open {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+    margin-top: -1px;
+}
+div.custom-select ul.options > li {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 7px 10px;
+    color: #868889;
+}
+div.custom-select ul.options > li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #ccc;
+}
+div.custom-select ul.options > li:first-child::before {
+    display: none;
+}
+div.custom-select ul.options > li:hover::before,
+div.custom-select ul.options > li:hover + li::before  {
+    left: 0;
+    right: 0;
+}
+
+div.custom-select ul.options > li:hover {
+    color: #333;
+    cursor: pointer;
+    background: #eee;
+}
+
+div.custom-select ul.options > li.active {
+    color: #d10019;
+}
+

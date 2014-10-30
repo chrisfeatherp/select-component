@@ -1,0 +1,12 @@
+<div class="custom-select">
+	
+	<div class="label" ng-click="toggleState()">
+		{{ label }}
+	</div>
+	<ul class="options">
+
+		<li ng-repeat="option in options" ng-click="selectVal($index)" ng-class="($index == selectedOptionIndex) ? 'active' : ''">
+			{{ option }}
+		</li>
+	</ul>
+</div>
