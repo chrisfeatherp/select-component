@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="/css/select.css">
+</head>
+<body>
+    <style type="text/css">
+    .container {
+        width: 500px;
+        margin: 8% auto;
+    }
+    .selector-wrap{
+        float: left;
+        width: 200px;
+    }
+    .code-wrap {
+        width: 260px;
+        float: right;
+        border-left: 1px solid #eee;
+        padding-left: 20px;
+    }
+    .input {
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 4px 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border:1px solid  #ccc;
+        color: #ccc;
+    }
+    .input:focus,
+    .input-two:focus {
+        color: #58585a;
+    }
+    p {
+        margin: 0 0 10px 0;
+        font-size: 13px;
+        font-family: 'Arial', sans-serif;
+    }
+    code {
+        border: 1px solid #eee;
+        border-radius: 2px;
+        margin: 0 5px 0 2px;
+        padding: 0 5px;
+        font-size: 12px; 
+        color: #8b959e;
+    }
+    .input-two {
+        width: 170px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border:1px solid  #ccc;
+        color: #ccc;
+        text-indent: 10px;
+        padding: 4px 0;
+        margin: 4px 0 0 0;
+    }
+    button {
+        color: #646f78;
+        border:1px solid  #ccc;
+        background: #fcfcfc;
+        padding: 4px 4px;
+        margin-left: -1px;
+    }
+    button:hover {
+        cursor: pointer;
+        border-color: #aaa;
+        background: #ececec;
+    }
+    .empty,
+    .dupe {
+        display: none;
+        width: 170px;
+        color: #d10019;
+        padding: 1px 10px;
+        border: 1px solid rgba(209, 0, 25, 0.40);
+        background: rgba(209, 0, 25, 0.15);
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius:2px;
+        border-top: none;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    </style>
+
+
+
+    <div ng-app="app">
+
+        <div class="container" ng-controller="SelectController">
+            <div class="selector-wrap">
+                <select-component ng-model="selectedOption" data-options="options" ></select-component>
+            </div>
+            <div class="code-wrap">
+                <p><code>ng-model</code>(String) : Selected option value.</p>
+                <input ng-model="selectedOption" class="input">
+
+                <p><code>data-options</code>(Array) : Data source.</p>
+                <ul>
+
+                    <li ng-repeat="option in options">
+                        {{ option }}
+                    </li>
+                    <li><input ng-model="newValue" class="input-two" type="text" placeholder="Add a new value"><button ng-click="addValue()">ADD</button>
+                        <p class="empty">The field is empty!</p>
+                        <p class="dupe">The value already exists!</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script type="text/javascript" src="/js/select.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
